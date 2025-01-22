@@ -1,101 +1,156 @@
-import Image from "next/image";
+import Button from '@/components/atoms/button';
+import { CardDevice } from '@/components/molecules/CardDevice';
+import CategoryCard from '@/components/molecules/CategoryCard';
+import FAQCard from '@/components/molecules/FAQCard';
+import PlanCard from '@/components/molecules/PlanCard';
+import Footer from '@/components/organism/Footer';
+import Navbar from '@/components/organism/Navbar';
+import { ListDevices } from '@/services/devices';
+import Image from 'next/image';
+// import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className='bg-black-08'>
+      <Navbar />
+      <section className='bg-background bg-cover bg-center h-screen w-full'>
+        <div className='bg-gradient-to-t from-black-08 via-transparent to-black-08 h-full w-full'>
+          <div className='relative bg-black-08 bg-opacity-70 flex flex-col justify-end h-full w-full px-6 py-10'>
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src='/images/logo.png'
+              width={200}
+              height={200}
+              alt='logo'
+              className='absolute h-64 w-64 lg:w-80 lg:h-80 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className='mx-auto text-center w-11/12'>
+              <h1 className='text-white text-3xl lg:text-5xl font-bold'>The Best Streaming Experience</h1>
+              <p className='mt-2.5 text-grey-60 text-sm w-full'>
+                StreamVibe is the best streaming experience for watching your favorite movies and shows on demand,
+                anytime, anywhere.{' '}
+                <span className='hidden md:block'>
+                  With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic
+                  movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find
+                  the content you want to watch.
+                </span>
+              </p>
+              <Button style='primary-button mt-7'>Start Watching Now</Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+      <section className='px-4 mt-24 lg:px-20'>
+        <div className=''>
+          <h3 className='text-white font-bold text-2xl lg:text-3xl'>Explore our wide variety of categories</h3>
+          <p className='text-sm text-grey-60 mt-2 lg:text-base'>
+            Whether you&apos;re looking for a comedy to make you laugh, a drama to make you think, or a documentary to
+            learn something new
+          </p>
+        </div>
+        <div className='mt-14 grid grid-cols-5 gap-x-5'>
+          <CategoryCard linkImage='/images/action.png' title='Action' linkPage='#' />
+          <CategoryCard linkImage='/images/adventure.png' title='Adventure' linkPage='#' />
+          <CategoryCard linkImage='/images/comedy.png' title='Comedy' linkPage='#' />
+          <CategoryCard linkImage='/images/drama.png' title='Drama' linkPage='#' />
+          <CategoryCard linkImage='/images/horor.png' title='Horor' linkPage='#' />
+        </div>
+      </section>
+      <section className='px-4 mt-12 lg:px-20'>
+        <div className=''>
+          <h3 className='text-white font-bold text-xl lg:text-3xl'>
+            We Provide you streaming experience across various devices.
+          </h3>
+          <p className='text-sm text-grey-60 mt-2 lg:text-base'>
+            With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere.
+          </p>
+        </div>
+        <div className='grid grid-cols-1 gap-5 mt-10 md:grid-cols-2 lg:grid-cols-3'>
+          {ListDevices.map((device, key) => (
+            <CardDevice
+              key={key}
+              Subtitle={device.subtitle}
+              description={device.description}
+              sourceImage={device.sourceImage}
+              widthImage={device.widthIcon}
+              heightImage={device.heightIcon}
+            />
+          ))}
+        </div>
+      </section>
+      <section className='px-4 mt-20 lg:px-20'>
+        <div className='flex flex-col md:flex-row md:items-center md:justify-between'>
+          <div className=''>
+            <h3 className='text-white font-bold text-xl'>Frequently Ask Questions</h3>
+            <p className='text-sm text-grey-60 mt-2'>
+              Got questions? We&apos;ve got answers! Check out our FAQ section to find answers to the most common
+              questions about StreamVibe.
+            </p>
+          </div>
+          <Button style='bg-red-45 w-fit text-white font-semibold text-sm rounded-md py-4 px-5 mt-5 md:mt-0'>
+            Ask a Question
+          </Button>
+        </div>
+        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 md:gap-x-10 md:mt-14'>
+          <div className=''>
+            <FAQCard
+              listNumber='01'
+              question='What is StreamVibe?'
+              // answer='StreamVibe is a streaming service that allows you to watch movies and shows on demand.'
+            />
+            <hr className='h-0.5 border-none w-full bg-gradient-to-r from-black via-red-50 to-black' />
+            <FAQCard listNumber='02' question='How much does StreamVibe cost?' />
+            <hr className='h-0.5 border-none w-full bg-gradient-to-r from-black via-red-50 to-black' />
+            <FAQCard listNumber='03' question='What content is available on StreamVibe?' />
+            <hr className='h-0.5 border-none w-full bg-gradient-to-r from-black via-red-50 to-black' />
+            <FAQCard listNumber='04' question='How can I watch StreamVibe?' />
+          </div>
+          <div className=''>
+            <FAQCard listNumber='05' question='How do I sign up for StreamVibe?' />
+            <hr className='h-0.5 border-none w-full bg-gradient-to-r from-black via-red-50 to-black' />
+            <FAQCard listNumber='06' question='What is the StreamVibe free trial?' />
+            <hr className='h-0.5 border-none w-full bg-gradient-to-r from-black via-red-50 to-black' />
+            <FAQCard listNumber='07' question='How do I contact StreamVibe customer support?' />
+            <hr className='h-0.5 border-none w-full bg-gradient-to-r from-black via-red-50 to-black' />
+            <FAQCard listNumber='08' question='What are the StreamVibe payment methods?' />
+          </div>
+        </div>
+      </section>
+      <section className='px-4 mt-20 lg:px-20'>
+        <div className='flex flex-col md:flex-row md:items-center md:justify-between'>
+          <div className=''>
+            <h3 className='text-white font-bold text-2xl'>Choose the plan that&apos;s right for you</h3>
+            <p className='text-sm text-grey-60 mt-2.5'>
+              Join StreamVibe and select from our flexible subscription options tailored to suit your viewing
+              preferences. Get ready for non-stop entertainment!
+            </p>
+          </div>
+          <div className='bg-black-06 mt-5 w-fit border border-black-15 p-2 rounded-lg'>
+            <Button style='bg-black-12 text-white font-semibold text-sm rounded-md py-3 px-5'>Monthly</Button>
+            <Button style='text-white font-semibold text-sm rounded-md py-3 px-5'>Yearly</Button>
+          </div>
+        </div>
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3 mt-10'>
+          <PlanCard
+            title='Basic'
+            price={9.99}
+            unit='month'
+            description='Enjoy an extensive library of movies and shows, featuring a range of content, including recently released titles.'
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <PlanCard
+            title='Standard'
+            price={12.99}
+            unit='month'
+            description='Access to a wider selection of movies and shows, including most new releases and exclusive content'
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <PlanCard
+            title='Premium Plan'
+            price={14.99}
+            unit='month'
+            description='Access to a widest selection of movies and shows, including all new releases and Offline Viewing'
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </section>
+      <Footer />
+    </main>
   );
 }
