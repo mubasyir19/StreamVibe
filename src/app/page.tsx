@@ -7,7 +7,6 @@ import Footer from '@/components/organism/Footer';
 import Navbar from '@/components/organism/Navbar';
 import { ListDevices } from '@/services/devices';
 import Image from 'next/image';
-// import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -47,7 +46,7 @@ export default function Home() {
             learn something new
           </p>
         </div>
-        <div className='mt-14 grid grid-cols-5 gap-x-5'>
+        <div className='mt-14 flex overflow-x-scroll lg:overflow-hidden gap-x-5'>
           <CategoryCard linkImage='/images/action.png' title='Action' linkPage='#' />
           <CategoryCard linkImage='/images/adventure.png' title='Adventure' linkPage='#' />
           <CategoryCard linkImage='/images/comedy.png' title='Comedy' linkPage='#' />
