@@ -13,13 +13,13 @@ export default function Navbar() {
           <li className='text-sm bg-black-10 text-white px-5 py-3 rounded-lg'>
             <Link href='#'>Home</Link>
           </li>
-          <li className='text-sm bg-black-10 text-white px-5 py-3 rounded-lg'>
+          <li className='text-sm text-white px-5 py-3 rounded-lg'>
             <Link href='#'>Movies & Shows</Link>
           </li>
-          <li className='text-sm bg-black-10 text-white px-5 py-3 rounded-lg'>
+          <li className='text-sm text-white px-5 py-3 rounded-lg'>
             <Link href='#'>Support</Link>
           </li>
-          <li className='text-sm bg-black-10 text-white px-5 py-3 rounded-lg'>
+          <li className='text-sm text-white px-5 py-3 rounded-lg'>
             <Link href='#'>Subscriptions</Link>
           </li>
         </ul>
