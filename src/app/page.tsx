@@ -149,6 +149,24 @@ export default function Home() {
           />
         </div>
       </section>
+      <section className='px-4 mt-20 lg:px-20'>
+        <div className='bg-background bg-cover bg-center w-full h-80 rounded-xl'>
+          <div className='px-7 py-12 bg-gradient-to-b lg:bg-gradient-to-r from-black/90 via-black/80 lg:from-black lg:via-black/90 lg:to-red-45/40 to-red-45/40 w-full h-full rounded-xl flex flex-col md:flex-row justify-between items-center'>
+            <div className='text-center md:text-start'>
+              <h2 className='font-bold text-2xl text-white'>
+                Start your free trial <br className='lg:hidden' /> today!
+              </h2>
+              <p className='mt-2 text-grey-60 text-sm'>
+                This is a clear and concise call to action that encourages users to sign up for a free trial of
+                StreamVibe.
+              </p>
+            </div>
+            <button className='mt-12 md:mt-0 bg-red-45 rounded-lg text-white text-center py-4 px-5 text-sm font-semibold'>
+              Start a Free trial
+            </button>
+          </div>
+        </div>
+      </section>
       <Footer />
     </main>
   );
