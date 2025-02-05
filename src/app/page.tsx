@@ -46,7 +46,7 @@ export default function Home() {
             learn something new
           </p>
         </div>
-        <div className='mt-14 flex overflow-x-scroll lg:overflow-hidden gap-x-5'>
+        <div className='w-full mt-14 flex overflow-x-scroll gap-x-5'>
           <CategoryCard linkImage='/images/action.png' title='Action' linkPage='#' />
           <CategoryCard linkImage='/images/adventure.png' title='Adventure' linkPage='#' />
           <CategoryCard linkImage='/images/comedy.png' title='Comedy' linkPage='#' />
