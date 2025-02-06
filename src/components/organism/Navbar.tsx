@@ -1,8 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <nav className='hidden lg:flex justify-between items-center py-4 px-20'>
       <div className=''>
@@ -10,17 +15,19 @@ export default function Navbar() {
       </div>
       <div className='bg-black-06 border-4 border-black-12 rounded-xl p-2'>
         <ul className='flex items-center gap-x-4'>
-          <li className='text-sm bg-black-10 text-white px-5 py-3 rounded-lg'>
-            <Link href='#'>Home</Link>
+          <li className={`text-sm text-white px-5 py-3 rounded-lg ${pathname === '/' ? 'bg-black-10' : ''}`}>
+            <Link href='/'>Home</Link>
           </li>
-          <li className='text-sm text-white px-5 py-3 rounded-lg'>
-            <Link href='#'>Movies & Shows</Link>
+          <li className={`text-sm text-white px-5 py-3 rounded-lg ${pathname === '/movies' ? 'bg-black-10' : ''}`}>
+            <Link href='/movies'>Movies & Shows</Link>
           </li>
-          <li className='text-sm text-white px-5 py-3 rounded-lg'>
-            <Link href='#'>Support</Link>
+          <li className={`text-sm text-white px-5 py-3 rounded-lg ${pathname === '/support' ? 'bg-black-10' : ''} `}>
+            <Link href='/support'>Support</Link>
           </li>
-          <li className='text-sm text-white px-5 py-3 rounded-lg'>
-            <Link href='#'>Subscriptions</Link>
+          <li
+            className={`text-sm text-white px-5 py-3 rounded-lg ${pathname === '/subscriptions' ? 'bg-black-10' : ''}`}
+          >
+            <Link href='/subscriptions'>Subscriptions</Link>
           </li>
         </ul>
       </div>
