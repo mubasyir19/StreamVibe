@@ -1,10 +1,10 @@
 import Button from '@/components/atoms/button';
 import { CardDevice } from '@/components/molecules/CardDevice';
-import CategoryCard from '@/components/molecules/CategoryCard';
 import FAQCard from '@/components/molecules/FAQCard';
 import PlanCard from '@/components/molecules/PlanCard';
 import Footer from '@/components/organism/Footer';
 import Navbar from '@/components/organism/Navbar';
+import SliderCategory from '@/components/organism/SliderCategory';
 import { ListDevices } from '@/services/devices';
 import Image from 'next/image';
 
@@ -38,22 +38,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='px-4 mt-24 lg:px-20'>
-        <div className=''>
-          <h3 className='text-white font-bold text-2xl lg:text-3xl'>Explore our wide variety of categories</h3>
-          <p className='text-sm text-grey-60 mt-2 lg:text-base'>
-            Whether you&apos;re looking for a comedy to make you laugh, a drama to make you think, or a documentary to
-            learn something new
-          </p>
-        </div>
-        <div className='w-full mt-14 flex overflow-x-scroll gap-x-5'>
-          <CategoryCard linkImage='/images/action.png' title='Action' linkPage='#' />
-          <CategoryCard linkImage='/images/adventure.png' title='Adventure' linkPage='#' />
-          <CategoryCard linkImage='/images/comedy.png' title='Comedy' linkPage='#' />
-          <CategoryCard linkImage='/images/drama.png' title='Drama' linkPage='#' />
-          <CategoryCard linkImage='/images/horor.png' title='Horor' linkPage='#' />
-        </div>
-      </section>
+      <SliderCategory />
       <section className='px-4 mt-12 lg:px-20'>
         <div className=''>
           <h3 className='text-white font-bold text-xl lg:text-3xl'>

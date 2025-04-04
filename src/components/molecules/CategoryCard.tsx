@@ -6,15 +6,16 @@ import Button from '../atoms/button';
 import { useRouter } from 'next/navigation';
 
 interface CategoryCardProps {
+  id: string;
   linkImage: string;
   title: string;
   linkPage: string;
 }
 
-export default function CategoryCard({ linkImage, title, linkPage }: CategoryCardProps) {
+export default function CategoryCard({ id, linkImage, title, linkPage }: CategoryCardProps) {
   const router = useRouter();
   return (
-    <div id='category-card' className='p-5 lg:p-6 bg-black-10 border border-black-15 rounded-lg'>
+    <div id={id} className='p-5 lg:p-6 bg-black-10 border border-black-15 rounded-lg'>
       <div className='relative w-48 h-52'>
         <Image src={linkImage} width={193} height={210} alt='category' className='w-full h-full object-cover' />
         <div className='absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent rounded-lg'></div>
