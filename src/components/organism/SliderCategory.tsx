@@ -36,9 +36,13 @@ export default function SliderCategory() {
       </div>
       <div ref={containerRef} className='w-full mt-14 overflow-x-hidden flex scroll-smooth space-x-4'>
         {categoryMovie.map((item) => (
-          <>
-            <CategoryCard id={item.id} linkImage={`/images/${item.image_path}`} title={item.title} linkPage={`#`} />
-          </>
+          <CategoryCard
+            key={item.id}
+            id={item.id}
+            linkImage={`/images/${item.image_path}`}
+            title={item.title}
+            linkPage={`#`}
+          />
         ))}
       </div>
     </section>
