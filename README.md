@@ -81,27 +81,26 @@ To run this project locally, follow these steps:
 
 ## Project Structure
 
+```
 ├── public/
 ├── src/
-│ ├── app/  
-│ ├── components/  
-│ ├── config/  
-│ ├── helpers/  
-│ ├── hooks/  
-│ ├── services/  
-│ ├── types/  
-│ ├── hooks/  
-│ ├── services/  
-│ ├── types/  
-├── .env  
+│ ├── app/
+│ ├── components/
+│ ├── config/
+│ ├── helpers/
+│ ├── hooks/
+│ ├── services/
+│ ├── types/
+├── .env
 ├── .eslintrc.json
-├── .gitignore  
+├── .gitignore
 ├── package-lock.json
 ├── package.json
-├── postcss.config.mjs  
+├── postcss.config.mjs
 ├── README.md
 ├── tailwind.config.ts
 ├── tsconfig.json
+```
 
 ---
 
