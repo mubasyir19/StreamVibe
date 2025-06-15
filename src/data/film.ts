@@ -9,19 +9,19 @@ export const film = [
     language: ['English', 'Indonesian', 'Arabic', 'Hindi'],
     cast: [
       {
-        name: '',
+        name: '', // actor and actress film
         photo: '',
       },
     ],
     director: {
-      name: '',
+      name: '', // director film
       photo: '',
       origin: '',
     },
     music: '',
     reviews: [
       {
-        name: '',
+        name: '', // user
         origin: '',
         content: '',
         rating: '',
