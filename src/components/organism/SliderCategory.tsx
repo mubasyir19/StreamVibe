@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import CategoryCard from '../molecules/CategoryCard';
-import { categoryMovie } from '@/services/category';
+import { categoryMovie } from '@/data/category';
 
 export default function SliderCategory() {
   const containerRef = useRef<HTMLDivElement>(null);

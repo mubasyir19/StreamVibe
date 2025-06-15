@@ -5,7 +5,7 @@ import PlanCard from '@/components/molecules/PlanCard';
 import Footer from '@/components/organism/Footer';
 import Navbar from '@/components/organism/Navbar';
 import SliderCategory from '@/components/organism/SliderCategory';
-import { ListDevices } from '@/services/devices';
+import { ListDevices } from '@/data/devices';
 import Image from 'next/image';
 
 export default function Home() {
